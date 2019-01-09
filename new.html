@@ -16,24 +16,31 @@
         constructor(props) {
           super(props);
 
-          this.state = {
-            counter: 0
-          };
+          this.state = {counter: 0};
+          this.addToCount = this.addToCount.bind(this);
+
+        }
+
+        addToCount() {
+          this.setState({
+            counter: this.state.counter + 1,
+          });
         }
 
         render() {
           return (
             <div>
               <h1>Things Are Quickly Heating Up!</h1>
-              <p> Let's see if I understand this checkpoint on <b>Props</b> and <b>States</b>.</p>
+              <p> Let's see if I, <b><i>{this.props.name}</i></b>, understand this checkpoint on <b>Props</b> and <b>States</b>.</p>
               <p style={ { color: 'red' } }>This button has been pressed <b>{this.state.counter}</b> times!</p>
+              <button onClick={this.addToCount}>Click Me Please!</button>
 
             </div>
           );
         }
       }
 
-      ReactDOM.render(<New />, document.getElementById("app"));
+      ReactDOM.render(<New name="Steven V."/>, document.getElementById("app"));
     </script>
   </body>
 </html>
