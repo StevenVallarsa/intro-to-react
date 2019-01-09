@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Second React App</title>
+    <title>Checkpoint 2748 - Props and State</title>
   </head>
 
   <body>
     <div id="app"></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    
+    <script type="text/babel">
 
-        <script type="text/babel">
-          class New extends React.Component {
-             render() {
-               return (
-                 <div>
-                   <h1>Hello Brave New World</h1>
-                   <p>This is my second <b>React App</b>.</p>
-                   <p>What may come of this? And why can I not use appostrophes?</p>
-                 </div>
-               );
-             }
-           }
+      class New extends React.Component {
+        constructor(props) {
+          super(props);
 
-           ReactDOM.render(
-             <New />, document.getElementById('app')
-           );
+          this.state = {
+            counter: 0
+          };
+        }
 
-        </script>
+        render() {
+          return (
+            <div>
+              <h1>Things Are Quickly Heating Up!</h1>
+              <p> Let's see if I understand this checkpoint on <b>Props</b> and <b>States</b>.</p>
+              <p style={ { color: 'red' } }>This button has been pressed <b>{this.state.counter}</b> times!</p>
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<New />, document.getElementById("app"));
+    </script>
   </body>
-
 </html>
